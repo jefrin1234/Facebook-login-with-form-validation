@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+         <div class="logo">
+            <a class="logo-text" href="facebook.html">facebook</a>
+         </div>
+         <div class="login">
+            <form action="">
+              <table>
+
+            <tr>
+               <td><label class="email-label">email or phone</label></td>
+               <td><label class="password-label">password</label></td>
+              
+
+            </tr> 
+            <tr>
+                <td><input type="text"></td>
+                <td><input class="password-text" type="text"></td>
+                <td><input class="login-button" type="submit" value="login"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a class="forgot-account-link" href="forgot_password.html">Forgotten account?</a></td>
+
+            </tr>
+
+
+        </table>
+            </form>
+         </div>
+            
+        </div>
+        <div class="main-body">
+            <div class="left-section">
+                <P class="para1" >Facebook helps you connect and share with the<br> people in your life.</P>
+                
+                 <img class="image" src="images/fb-home.png">
+                 
+            </div>
+                <div class="right-section">
+                    <h1 class="create-account"><strong>Create an account</strong></h1>
+                    <p class="quick-easy">Its quick and easy.</p>
+
+
+                    <form  id="signup-form">
+                        <label></label>
+                        <input name="fname" id="first-name" type="text" placeholder="First name">
+                        <label></label>
+                        <input name="sname" id="surname" type="text" placeholder="Surname">
+                        <br>
+                        <br>
+                        <label></label>
+                        <input name="emailaddress" id="email" type="text" placeholder="Mobile number or email address">
+                        <br>
+                        <br>
+                        <label></label>
+                        <input name="password" id="Password" type="password" placeholder="New password">
+                        
+                  
+
+                        
+                    
+                       
+                    <br>
+                    <div class="signup-field">
+                    <label class="birthday">Birthday</label>
+                    <br>
+                    <br>
+                   <select name="day">
+                    
+                    <option value="">DAY</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                   
+                    
+                   </select>
+                   <select name="month">
+                    <option value="">Month</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    
+                   </select>
+                   <select name="year">
+                    <option value="">Year</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+               
+                   </select>
+                </div>
+                   <br>
+                   <br>
+                   <label>Gender</label>
+                   <br>
+                   <br>
+                   
+                   <input type="radio" name="gender"  value="Male">
+                   <label>male</label>
+                   <input type="radio" name="gender"  value="female">
+                   <label>female</label>
+                   <input type="radio" name="gender" value="custom">
+                   <label>custom</label>
+                   
+                  
+
+                   <p class="para2">By clicking sign up, you agree to our
+                    <span class="terms">Terms</span>,<span class="data-policy">Data Policy</span>and<br>
+                    <span class="cookie-policy">Cookie Policy.</span>And you may receive SMS notifications from us. and<br>
+                    and can optout at any time.
+                    
+                    
+                   </p>
+                    <br>
+                    <button class="sign-up" type="submit">Sign up</button>
+
+                    
+                    
+                </form>
+            </div>
+            
+        </div>
+
+        
+        
+            
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script src="script.js">
+        
+    </script>
+</body>
+</html>
+
+
+
+
+$(document).ready(function(){
+  $("#signup-form").validate({
+      rules:{
+          fname:{
+              required:true,
+              minlength:4,
+              maxlength:10
+          },
+          sname:{
+              required:true,
+              minlength:4,
+              maxlength:20
+
+          },
+          emailaddress:{
+              required:true,
+              email:true
+          },
+          password:{
+              required:true,
+              minlength:6
+
+          },
+          day:{
+              required:true,
+              
+
+          },
+          month:{
+              required:true
+          },
+          year:{
+              required:true
+          },
+          gender:{
+              required:true
+          }
+         
+      },
+      messages:{
+          fname:{
+              required:"enter first name",
+              minlength:"enter atleast 4 characters"
+          }
+              
+          
+      }
+  })
+})
+
+
+.header{
+  width: 100%;
+  height: 90px;
+  background: #3b5998;
+}
+body{
+  margin: 0;
+  font-family:  Arial, Helvetica, sans-serif;;
+}
+.logo{
+  width: 50%;
+  padding-top: 32px;
+  float: left;
+}
+.login{
+  width: 50%;
+  float: left;
+  padding-top: 10px;
+}
+.logo-text{
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 170px;
+
+}
+.email-label{
+  color: white;
+}
+  
+
+.password-label{
+  color: white;
+  padding-left: 15px;
+
+
+}  
+.password-text{
+  margin-left: 15px;
+}
+.login-button{
+  color: white;
+  background:#4267b2;
+  border: #4267b2;
+  margin-left: 10px;
+  cursor: pointer;
+    
+  
+}
+
+.forgot-account-link{
+  color: #9cb4d8;
+  text-decoration: none;
+  margin: 15px;
+}
+.login-button:hover{
+  background-color: #3b5998;
+}
+
+.left-section{
+ width: 48%;
+  height: 700px;
+  float: left;
+  background: linear-gradient(white,#D3D8E8);
+}.right-section{
+  background: linear-gradient(white,#D3D8E8);
+  width: 52%;
+  height: 700px;
+  
+  float: left;
+}
+.para1{
+  padding-left: 23%;
+  color: #3b5998;
+  
+  padding-top: 29px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+  
+
+
+.main-body{
+  width: 100%;
+  height: 910px;
+ 
+  
+}
+.image{
+  margin-left: 180px;
+  width: 450px;
+}
+#first-name{
+  width: 170px;
+  height: 28px;
+  margin-top: 25px;
+  font-size: 15px;
+}
+#surname{
+  width: 170px;
+  height: 28px;
+  margin-top: 25px;
+  font-size: 15px;
+
+}
+
+
+
+
+#Password{
+ 
+  width: 352px;
+  height: 28px;
+  font-size: 15px;
+  margin-top: 5px;
+}
+#email{
+  width: 352px;
+  height: 28px;
+  margin-top: 25px;
+  font-size: 15px;
+  margin-top: 2px;
+}
+.para2{
+  font-size: 10px;
+}
+.sign-up{
+  height: 35px;
+  width: 200px;
+  background: #42b72a;
+  border-color: #42b72a;
+}
+.terms{
+  color: #3b5998;
+}
+.data-policy{
+  color: #3b5998;
+}
+.cookie-policy{
+  color: #3b5998;
+}
+.birthday{
+  color: #4267b2;
+}
+
+.question-mark {
+  font-size: 30px;
+  color: #555;
+}0.
+.
